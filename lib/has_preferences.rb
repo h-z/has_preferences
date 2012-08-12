@@ -1,6 +1,6 @@
 require 'active_record'
 
-module Preferences
+module HasPreferences
   class Preference < ActiveRecord::Base
     belongs_to :holder, :polymorphic => true
     validates_uniqueness_of :key, :scope => [:holder_type, :holder_id]
@@ -22,7 +22,7 @@ module Preferences
         end
       end
       include InstanceMethods
-      has_many :preferences, :as => :holder, :class_name => Preferences::Preference
+      has_many :preferences, :as => :holder, :class_name => HasPreferences::Preference
     end
   end
 
@@ -77,4 +77,4 @@ module Preferences
   end
 end
 
-ActiveRecord::Base.send :include, Preferences
+ActiveRecord::Base.send :include, HasPreferences

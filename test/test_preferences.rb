@@ -53,7 +53,7 @@ class Bone < ActiveRecord::Base
   belongs_to :dog
 end
 
-class TestPreferencesWithOneModel < Test::Unit::TestCase
+class TestHasPreferencesWithOneModel < Test::Unit::TestCase
   context "single model" do
     setup do
       setup_db
@@ -95,7 +95,7 @@ class TestPreferencesWithOneModel < Test::Unit::TestCase
   end
 end
 
-class TestPreferencesWithTwoModels < Test::Unit::TestCase
+class TestHasPreferencesWithTwoModels < Test::Unit::TestCase
   context "child" do
     setup do
       setup_db
