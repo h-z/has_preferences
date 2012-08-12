@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "has_preferences"
   gem.homepage = "http://github.com/h-z/has_preferences"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Preferences for ActiveRecord models}
+  gem.description = %Q{Add preferences to ActiveRecord models with tree-like defaults}
   gem.email = "hz@muszaki.info"
   gem.authors = ["HEGEDUS Zoltan"]
   # dependencies defined in Gemfile
