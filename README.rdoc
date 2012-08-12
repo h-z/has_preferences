@@ -1,7 +1,30 @@
 = preferences
 
-Description goes here.
+This is a lightweight gem for storing preferences for ActiveRecord models. 
 
+== Usage
+
+  class Boss < ActiveRecord::Base
+    has_preferences
+  end
+
+  class Employee < ActiveRecord::Base
+    has_preferences :parent => :boss
+    belongs_to :boss
+  end
+
+  boss = Boss.find(1)
+  boss.pref(:car_type, :audi)
+  boss.pref(:wallpaper, :company)
+  employee = boss.employees.first
+  employee.pref(:car_type, :skoda)
+  
+  employee.pref(:car_type)  # => :skoda
+  employee.pref(:wallpaper)  # => :company
+  
+In the above model, the Boss model has its own preferences, e.g. car_type. The employee has only car_type preferences, thus the wallpaper preference should be the one the boss setted.
+
+  
 == Contributing to preferences
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
