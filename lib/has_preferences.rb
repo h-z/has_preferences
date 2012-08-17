@@ -2,6 +2,7 @@ require 'active_record'
 
 module HasPreferences
   class Preference < ActiveRecord::Base
+    attr_accessible  :key, :value, :holder_type, :holder_id
     belongs_to :holder, :polymorphic => true
     validates_uniqueness_of :key, :scope => [:holder_type, :holder_id]
   end
